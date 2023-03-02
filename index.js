@@ -31,7 +31,7 @@ class ProductManager {
                   console.log('todos los campos son obligatorios ')
              } else {
                 this.products.push(product)
-                fs.promises.writeFile(this.path, JSON.stringify(this.products))
+                fs.writeFileSync(this.path, JSON.stringify(this.products))
                 ProductManager.id++
             }
         }
@@ -107,6 +107,6 @@ products.addProduct("Cacatua", "Animal", "$800", "imgRouts", 187856, 9)
  products.getProductsById(2);
  products.deleteProduct(1);
 
-//  products.updateProduct(2,)
+// products.updateProduct(2,)
 
 
